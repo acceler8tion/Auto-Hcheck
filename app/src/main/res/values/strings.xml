@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default Resources -->
+    <string name="app_name">Auto-Hcheck</string>
+    <string name="onoff_btn">On / Off</string>
+    <string name="setting_btn">Setting</string>
+
+    <!-- Notification Values -->
+    <string name="notification_id">AHN</string>
+    <string name="notification_name">Auto-Hcheck_Noti</string>
+    <string name="notification_desc">자가진단 관련 정보를 띄울 알림입니다.</string>
+
+    <!-- Notification Text Lists -->
+    <string name="empty_data">⚠ 빈 설정값이 존재합니다! ⚠</string>
+    <string name="empty_data_sol">앱 설정에서 빈 설정값이 있는지 확인해주세요.</string>
+
+    <!-- App Setting Values -->
+    <string name="schoolName_key">schoolName</string>
+</resources>
