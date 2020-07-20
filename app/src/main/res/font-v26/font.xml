@@ -4,6 +4,15 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/stanberry">
-
+    </font>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/scdream">
+    </font>
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/scdream5">
     </font>
 </font-family>

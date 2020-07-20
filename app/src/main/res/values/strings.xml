@@ -1,8 +1,11 @@
 <resources>
     <!-- Default Resources -->
     <string name="app_name">Auto-Hcheck</string>
+    <string name="app_sub_title">교육청 자가진단 자동화 앱</string>
     <string name="onoff_btn">On / Off</string>
     <string name="setting_btn">Setting</string>
+    <string name="more_info">학교코드는 이곳에서 확인 할 수 있습니다.</string>
+    <string name="c_mark">© 2020 DenFade, All rights reserved.</string>
 
     <!-- Notification Values -->
     <string name="notification_id">AHN</string>
@@ -10,9 +13,42 @@
     <string name="notification_desc">자가진단 관련 정보를 띄울 알림입니다.</string>
 
     <!-- Notification Text Lists -->
-    <string name="empty_data">⚠ 빈 설정값이 존재합니다! ⚠</string>
-    <string name="empty_data_sol">앱 설정에서 빈 설정값이 있는지 확인해주세요.</string>
+    <string name="foreground_title">서비스 켜짐</string>
+    <string name="empty_data_title">Failed to start…</string>
+    <string name="empty_data_text">My Profile 에서 빈 설정값이 있는지 확인해주세요.</string>
+
+    <string name="success_start_text">지금 자가진단설문을 제출하려면 탭하세요.</string>
+
+    <string name="err_on_running_title">자가진단설문 제출에 실패했습니다…</string>
+
+    <string name="suc_on_running_title">자가진단설문을 제출했습니다.</string>
+    <string name="suc_on_running_text">다음 자가진단설문은 내일 7:30(AM) 입니다.</string>
 
     <!-- App Setting Values -->
+    <string name="category_sum">자가진단 제출을 위한 정보를 입력하는 곳입니다.</string>
+    <string name="category_title">My Profile</string>
+
     <string name="schoolName_key">schoolName</string>
+    <string name="schoolName_sum">학교 이름을 지정하는 칸입니다.</string>
+
+    <string name="schoolName_title">학교명</string>
+
+    <string name="schoolCode_key">schoolCode</string>
+    <string name="schoolCode_sum">학교 코드을 지정하는 칸입니다.</string>
+    <string name="schoolCode_title">학교코드</string>
+
+    <string name="realName_key">realName</string>
+    <string name="realName_sum">본명을 지정하는 칸입니다.</string>
+    <string name="realName_title">본명</string>
+
+    <string name="birth_key">birth</string>
+    <string name="birth_hint">(예시: 010718)</string>
+    <string name="birth_sum">생년월일을 지정하는 칸입니다.</string>
+    <string name="birth_title">생년월일</string>
+
+    <string name="edu_key">edu</string>
+    <string name="edu_hint">(예시: goe, dge)</string>
+    <string name="edu_sum">교육청 코드를 지정하는 칸입니다.</string>
+    <string name="edu_title">교육청 코드</string>
+
 </resources>

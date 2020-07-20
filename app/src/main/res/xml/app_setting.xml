@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/category_title">
+        <EditTextPreference
+            android:key="@string/schoolName_key"
+            android:icon="@drawable/icon_school"
+            android:summary="@string/schoolName_sum"
+            android:title="@string/schoolName_title" />
+        <EditTextPreference
+            android:key="@string/schoolCode_key"
+            android:icon="@drawable/icon_code"
+            android:summary="@string/schoolCode_sum"
+            android:title="@string/schoolCode_title" />
+        <EditTextPreference
+            android:key="@string/realName_key"
+            android:icon="@drawable/icon_me"
+            android:summary="@string/realName_sum"
+            android:title="@string/realName_title" />
+        <EditTextPreference
+            android:key="@string/birth_key"
+            android:icon="@drawable/icon_calendar"
+            android:summary="@string/birth_sum"
+            android:title="@string/birth_title" />
+        <EditTextPreference
+            android:key="@string/edu_key"
+            android:icon="@drawable/icon_edu"
+            android:summary="@string/edu_sum"
+            android:title="@string/edu_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
