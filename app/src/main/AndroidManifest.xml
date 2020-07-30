@@ -22,8 +22,10 @@
             android:name=".HcheckDisposableService"
             android:enabled="true"
             android:exported="false" />
-
         <activity android:name=".AppSettingActivity" />
+        <receiver
+            android:name=".HcheckAlarmReceiver"
+            android:exported="false" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
