@@ -2,12 +2,13 @@ package com.github.DenFade.autohcheck;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
-import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -17,9 +18,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
-    private AlarmManager manager;
     private TextView title;
     private Button onoff_btn;
     private Button setting_btn;
@@ -28,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        manager = (AlarmManager) getSystemService(AlarmManager.class);
 
         title = (TextView) findViewById(R.id.app_title);
         onoff_btn = (Button) findViewById(R.id.app_onoff);
@@ -78,19 +78,9 @@ public class MainActivity extends AppCompatActivity {
         notificationManager.createNotificationChannel(channelForService);
     }
 
-    private void setAlarmOn(){
-
-    }
-
-    private void setAlarmOff(){
-
-    }
-
     private CharSequence getColoredOnOffText(boolean isRun){
         SpannableString s = new SpannableString(onoff_btn.getText());
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O){ //idk why spannable do not work :(
-            return s;
-        } else {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             if (isRun) {
                 s.setSpan(new ForegroundColorSpan(getColor(R.color.service_on)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 s.setSpan(new ForegroundColorSpan(Color.BLACK), 5, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
