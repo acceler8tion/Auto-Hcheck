@@ -29,7 +29,7 @@ public class HcheckService extends Service {
         super.onCreate();
 
         //포그라운드 서비스 전용 Notification 발생
-        NotificationManager manager = getSystemService(NotificationManager.class);
+        NotificationManager manager = Build.VERSION.SDK_INT < Build.VERSION_CODES.M ? (NotificationManager) getSystemService(NOTIFICATION_SERVICE) : getSystemService(NotificationManager.class);
         startForeground(1, new NotificationCompat.Builder(this, getString(R.string.notification_id))
                 .setSmallIcon(Build.VERSION.SDK_INT < Build.VERSION_CODES.O ? R.mipmap.app_icon_round : R.drawable.round_icon)
                 .setContentText(getString(R.string.foreground_title))
@@ -59,29 +59,18 @@ public class HcheckService extends Service {
         //타이머 schedule 전 마무리
         Calendar cal = Calendar.getInstance();
         Calendar cal2 = (Calendar) cal.clone();
-        boolean nextDay = false;
-        cal.set(
-                cal.get(Calendar.YEAR),
-                cal.get(Calendar.MONTH),
-                cal.get(Calendar.DATE),
-                7,
-                30,
-                0
-        );
-        if(cal2.after(cal)) {
-            nextDay = true;
-            cal.add(Calendar.DATE, 1);
-        }
+        cal2.add(Calendar.MINUTE, (5 - cal.get(Calendar.MINUTE)%5) + 5);
+        cal2.set(Calendar.SECOND, 0);
 
         //schedule 호출
         task = new HcheckTask(this, schoolCode, schoolName, realName, birth, edu);
-        timer.scheduleAtFixedRate(task, cal.getTime(), 1000 * 60 * 60 * 24);
+        timer.schedule(task, cal2.getTime(), 300000); //5min
         running = true;
 
         //알람 호출
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, getString(R.string.notification_id))
                 .setSmallIcon(Build.VERSION.SDK_INT < Build.VERSION_CODES.O ? R.mipmap.app_icon_round : R.drawable.round_icon)
-                .setContentTitle(nextDay ? "내일 7:30(AM) 에 자가진단을 제출합니다." : "잠시뒤 7:30(AM) 에 자가진단을 제출합니다.")
+                .setContentTitle("매 7:30(AM) 마다 자가진단을 제출합니다.")
                 .setContentText(getString(R.string.success_start_text))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setAutoCancel(true)

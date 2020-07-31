@@ -10,7 +10,10 @@ import com.github.DenFade.autohcheck.covid.HcheckClient;
 import com.github.DenFade.autohcheck.covid.HcheckRequest;
 import com.github.DenFade.autohcheck.exception.HcheckException;
 
+import java.util.Calendar;
 import java.util.TimerTask;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 public class HcheckTask extends TimerTask {
 
@@ -34,7 +37,14 @@ public class HcheckTask extends TimerTask {
 
     @Override
     public void run() {
-        NotificationManager manager = (NotificationManager) context.getSystemService(NotificationManager.class);
+
+        Calendar now = Calendar.getInstance();
+        int hour = now.get(Calendar.HOUR_OF_DAY);
+        int min = now.get(Calendar.MINUTE);
+
+        if(hour != 7 || !(30 <= min && min <= 35)) return;
+
+        NotificationManager manager = Build.VERSION.SDK_INT < Build.VERSION_CODES.M ? (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE) : context.getSystemService(NotificationManager.class);
         NotificationCompat.Builder builder;
 
         try{
