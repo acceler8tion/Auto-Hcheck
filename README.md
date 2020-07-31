@@ -3,4 +3,4 @@
 
 ## Description
 
-Check out [here](https://github.com/DenFade/Auto-Hcheck/releases/tag/RELEASE)!
+Check out [here](https://github.com/DenFade/Auto-Hcheck/releases)!
