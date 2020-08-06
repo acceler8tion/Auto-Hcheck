@@ -47,7 +47,7 @@ public class HcheckDisposableService extends Service {
         }
 
         //schedule 호출
-        HcheckTask task = new HcheckTask(this, schoolCode, schoolName, realName, birth, edu);
+        HcheckTask task = new HcheckTask(this, schoolCode, schoolName, realName, birth, edu, true, true);
         timer.schedule(task, 500);
 
         //Service 종료

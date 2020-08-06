@@ -42,6 +42,7 @@ public class HcheckService extends Service {
         String schoolCode = pref.getString("schoolCode", "");
         String realName = pref.getString("realName", "");
         String birth = pref.getString("birth", "");
+        boolean alert = pref.getBoolean("alert", false);
 
         if(edu.equals("") || schoolName.equals("") || schoolCode.equals("") || realName.equals("") || birth.equals("")){
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, getString(R.string.notification_id))
@@ -63,7 +64,7 @@ public class HcheckService extends Service {
         cal2.set(Calendar.SECOND, 0);
 
         //schedule 호출
-        task = new HcheckTask(this, schoolCode, schoolName, realName, birth, edu);
+        task = new HcheckTask(this, schoolCode, schoolName, realName, birth, edu, alert, false);
         timer.schedule(task, cal2.getTime(), 300000); //5min
         running = true;
 

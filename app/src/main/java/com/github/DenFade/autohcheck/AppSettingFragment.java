@@ -60,11 +60,12 @@ public class AppSettingFragment extends PreferenceFragmentCompat {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
             manager.getSharedPreferences().getAll().forEach((k, v) -> {
-                if(!v.equals("")) getPreferenceScreen().findPreference(k).setSummary((String) v);
+                if(!k.equals("alert") && !v.equals("")) getPreferenceScreen().findPreference(k).setSummary((String) v);
             });
         } else {
             Map<String, ?> prefs = manager.getSharedPreferences().getAll();
             for(String k : prefs.keySet()){
+                if(k.equals("alert")) continue;
                 if(!prefs.get(k).equals("")) getPreferenceScreen().findPreference(k).setSummary((String) prefs.get(k));
             }
         }

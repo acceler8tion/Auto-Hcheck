@@ -37,6 +37,7 @@ public class AppSettingActivity extends AppCompatActivity {
         s2.setSpan(new URLSpan("https://schoolmenukr.ml/code/app"), 6, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         instant.setText(s1);
+        instant.setMovementMethod(LinkMovementMethod.getInstance());
 
         more.setText(s2);
         more.setMovementMethod(LinkMovementMethod.getInstance());

@@ -27,6 +27,11 @@
             android:icon="@drawable/icon_edu"
             android:summary="@string/edu_sum"
             android:title="@string/edu_title" />
+        <CheckBoxPreference
+            android:key="alert"
+            android:summary="개발자 외 건드리지 마시오!"
+            android:title="Toggle Alert"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>
