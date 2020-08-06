@@ -80,14 +80,12 @@ public class MainActivity extends AppCompatActivity {
 
     private CharSequence getColoredOnOffText(boolean isRun){
         SpannableString s = new SpannableString(onoff_btn.getText());
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            if (isRun) {
-                s.setSpan(new ForegroundColorSpan(getColor(R.color.service_on)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                s.setSpan(new ForegroundColorSpan(Color.BLACK), 5, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else {
-                s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                s.setSpan(new ForegroundColorSpan(getColor(R.color.service_off)), 5, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
+        if (isRun) {
+            s.setSpan(new ForegroundColorSpan(getColor(R.color.service_on)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            s.setSpan(new ForegroundColorSpan(Color.BLACK), 5, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            s.setSpan(new ForegroundColorSpan(getColor(R.color.service_off)), 5, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         return s;
     }

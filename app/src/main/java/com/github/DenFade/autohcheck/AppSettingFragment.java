@@ -22,8 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import java.util.Map;
-
 public class AppSettingFragment extends PreferenceFragmentCompat {
 
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
@@ -58,17 +56,9 @@ public class AppSettingFragment extends PreferenceFragmentCompat {
             }
         });
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-            manager.getSharedPreferences().getAll().forEach((k, v) -> {
-                if(!v.equals("")) getPreferenceScreen().findPreference(k).setSummary((String) v);
-            });
-        } else {
-            Map<String, ?> prefs = manager.getSharedPreferences().getAll();
-            for(String k : prefs.keySet()){
-                if(!prefs.get(k).equals("")) getPreferenceScreen().findPreference(k).setSummary((String) prefs.get(k));
-            }
-        }
-
+        manager.getSharedPreferences().getAll().forEach((k, v) -> {
+            if(!v.equals("")) getPreferenceScreen().findPreference(k).setSummary((String) v);
+        });
 
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override

@@ -40,7 +40,7 @@ public class HcheckDisposableService extends Service {
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setAutoCancel(true)
                     .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, AppSettingActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
-            NotificationManager manager = Build.VERSION.SDK_INT < Build.VERSION_CODES.M ? (NotificationManager) getSystemService(NOTIFICATION_SERVICE) : getSystemService(NotificationManager.class);
+            NotificationManager manager = getSystemService(NotificationManager.class);
             manager.notify(101, builder.build());
 
             stopSelf();
