@@ -52,4 +52,12 @@
     <string name="edu_sum">교육청 코드를 지정하는 칸입니다.</string>
     <string name="edu_title">교육청 코드</string>
 
+    <string name="alert_key">alert</string>
+    <string name="alert_sum">개발자 외 사용금지.</string>
+    <string name="alert_title">Display Alert</string>
+
+    <string name="blink_key">blink</string>
+    <string name="blink_sum">뀨?</string>
+    <string name="blink_title">두근두근</string>
+
 </resources>
