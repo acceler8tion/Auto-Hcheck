@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setBlinking = pref.getBoolean("blink", false);
 
         if(setBlinking){
-            Animation animation = new AlphaAnimation(1f, 0.15f);
+            Animation animation = new AlphaAnimation(1f, 0.3f);
             animation.setDuration(1500);
             animation.setInterpolator(new LinearInterpolator());
             animation.setRepeatCount(Animation.INFINITE);
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                     on_off_btn.setText(getColoredOnOffText(false));
                     stopService(intent);
                 } else {
+                    on_off_btn.setText(getColoredOnOffText(true));
                     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                        on_off_btn.setText(getColoredOnOffText(true));
                         startForegroundService(intent);
                     } else {
                         startService(intent);
