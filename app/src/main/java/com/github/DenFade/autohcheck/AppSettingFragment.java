@@ -75,28 +75,30 @@ public class AppSettingFragment extends PreferenceFragmentCompat {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
                 Preference pref = getPreferenceScreen().findPreference(s);
-                String data = sharedPreferences.getString(s, "");
-                if(data.equals("")){
-                    switch (s){
-                        case "schoolName":
-                            pref.setSummary(getString(R.string.schoolName_sum));
-                            break;
-                        case "schoolCode":
-                            pref.setSummary(getString(R.string.schoolCode_sum));
-                            break;
-                        case "realName":
-                            pref.setSummary(getString(R.string.realName_sum));
-                            break;
-                        case "birth":
-                            pref.setSummary(getString(R.string.birth_sum));
-                            break;
-                        case "edu":
-                            pref.setSummary(getString(R.string.edu_sum));
-                            break;
-                        default:
+                if(!s.equals("alert") && !s.equals("blink")) {
+                    String data = sharedPreferences.getString(s, "");
+                    if (data.equals("")) {
+                        switch (s) {
+                            case "schoolName":
+                                pref.setSummary(getString(R.string.schoolName_sum));
+                                break;
+                            case "schoolCode":
+                                pref.setSummary(getString(R.string.schoolCode_sum));
+                                break;
+                            case "realName":
+                                pref.setSummary(getString(R.string.realName_sum));
+                                break;
+                            case "birth":
+                                pref.setSummary(getString(R.string.birth_sum));
+                                break;
+                            case "edu":
+                                pref.setSummary(getString(R.string.edu_sum));
+                                break;
+                            default:
+                        }
+                    } else {
+                        pref.setSummary(data);
                     }
-                } else {
-                    pref.setSummary(data);
                 }
             }
         };

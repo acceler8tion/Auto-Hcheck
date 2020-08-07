@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setBlinking = pref.getBoolean("blink", false);
 
         if(setBlinking){
-            Animation animation = new AlphaAnimation(1f, 0.3f);
+            Animation animation = new AlphaAnimation(1f, 0.15f);
             animation.setDuration(1500);
             animation.setInterpolator(new LinearInterpolator());
             animation.setRepeatCount(Animation.INFINITE);

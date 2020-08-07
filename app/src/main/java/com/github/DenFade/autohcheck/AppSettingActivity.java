@@ -31,7 +31,7 @@ public class AppSettingActivity extends AppCompatActivity {
                 Toast.makeText(AppSettingActivity.this, "잠시만 기다려주세요", Toast.LENGTH_SHORT).show();
                 startService(new Intent(AppSettingActivity.this, HcheckDisposableService.class));
             }
-        }, 15, 17, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }, 6, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         SpannableString s2 = new SpannableString(getString(R.string.more_info));
         s2.setSpan(new URLSpan("https://schoolmenukr.ml/code/app"), 6, 8, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

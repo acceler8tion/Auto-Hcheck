@@ -32,7 +32,7 @@
             android:summary="@string/alert_sum"
             android:title="@string/alert_title"
             android:defaultValue="false" />
-        <SwitchPreference
+        <CheckBoxPreference
             android:key="@string/blink_key"
             android:summary="@string/blink_sum"
             android:title="@string/blink_title"
