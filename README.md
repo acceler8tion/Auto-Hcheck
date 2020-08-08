@@ -1,7 +1,7 @@
 # Auto-Hcheck
 
 [![license](https://img.shields.io/github/license/DenFade/Auto-Hcheck?color=908F8F)]()
-[![release](https://img.shields.io/github/downloads/DenFade/Auto-Hcheck/BETA1.3.2/AutoHcheck.apk?color=3181FC&logo=github)](https://www.github.com/DenFade/AutoHcheck/releases/tag/BETA1.3.2)
+[![release](https://img.shields.io/github/downloads/DenFade/Auto-Hcheck/BETA1.3.2/AutoHcheck.apk?color=3181FC&logo=github)](https://www.github.com/DenFade/Auto-Hcheck/releases/tag/BETA1.3.2)
 
 
 코로나 자가진단 자동화 앱 입니다.
