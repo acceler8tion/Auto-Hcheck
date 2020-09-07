@@ -1,4 +1,4 @@
-# Auto-Hcheck - **Deprecated**
+# Auto-Hcheck - Deprecated
 
 [![license](https://img.shields.io/github/license/DenFade/Auto-Hcheck?color=908F8F)]()
 [![release](https://img.shields.io/github/downloads/DenFade/Auto-Hcheck/BETA1.3.2/AutoHcheck.apk?color=3181FC&logo=github)](https://www.github.com/DenFade/Auto-Hcheck/releases/tag/BETA1.3.2)
@@ -6,7 +6,7 @@
 
 코로나 자가진단 자동화 앱 입니다.
 
-:x: 이 앱은 현재 **지원중단상태** 입니다. 더이상 쓰지 않는것을 추천드립니다.
+:x: 이 앱은 현재 **지원중단상태** 입니다. 더이상 쓰지 않는것을 추천드립니다. :x:
 
 # Before use..
 
